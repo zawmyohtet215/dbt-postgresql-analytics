@@ -11,7 +11,7 @@ dbt_packages/
 /.dbt/
 
 # Ignore compiled SQL files
-*.sql
+#*.sql
 
 # Ignore local database credentials file (if using a local database)
 profiles.yml
