@@ -1,0 +1,27 @@
+
+dbt_packages/
+
+# Ignore dbt target directory (compiled models, logs, etc.)
+/target/
+
+# Ignore dbt logs
+/logs/
+
+# Ignore dbt artifacts
+/.dbt/
+
+# Ignore compiled SQL files
+*.sql
+
+# Ignore local database credentials file (if using a local database)
+profiles.yml
+
+# Ignore dbt project-specific temporary files
+dbt_modules/
+
+# Ignore any system files (macOS, Windows)
+.DS_Store
+Thumbs.db
+
+# Ignore virtual environment
+/env/

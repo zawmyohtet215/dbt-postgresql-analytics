@@ -1,0 +1,123 @@
+version: 2
+
+models:
+  # Staging model for customer data
+  - name: stg_customer
+    description: "Staging model for customer data from Northwind."
+    columns:
+      - name: custid
+        description: "Unique identifier for each customer"
+        tests:
+          - not_null
+          - unique
+
+      - name: companyname
+        description: "Name of the customer's company"
+        tests:
+          - not_null
+
+      - name: contactname
+        description: "Contact person for the customer"
+
+      - name: contacttitle
+        description: "Position of the contact person"
+
+      - name: address
+        description: "Address of the customer"
+
+      - name: city
+        description: "City of the customer"
+
+  # Staging model for order detail data
+  - name: stg_orderdetail
+    description: "Staging model for order detail data from Northwind."
+    columns:
+      - name: orderid
+        description: "ID of the order"
+        tests:
+          - not_null
+
+      - name: productid
+        description: "ID of the product in the order"
+        tests:
+          - not_null
+
+      - name: qty
+        description: "Quantity of the product in the order"
+        tests:
+          - not_null
+
+      - name: unitprice
+        description: "Price of the product at the time of the order"
+
+      - name: discount
+        description: "Discount amount of the order"
+        tests:
+          - not_null
+
+  # Staging model for product data
+  - name: stg_product
+    description: "Staging model for product data from Northwind."
+    columns:
+      - name: productid
+        description: "Unique identifier for each product"
+        tests:
+          - not_null
+          - unique
+
+      - name: productname
+        description: "Name of the product"
+        tests:
+          - not_null
+      
+      - name: supplierid
+        description: "ID of the product's supplier"
+        tests:
+          - not_null
+
+      - name: categoryid
+        description: "ID of the product's category"
+        tests:
+          - not_null
+
+      - name: unitprice
+        description: "Price of a single unit of the product"
+
+  # Staging model for sales order data
+  - name: stg_salesorder
+    description: "Staging model for sales order data from Northwind."
+    columns:
+      - name: orderid
+        description: "Unique identifier for each sales order"
+        tests:
+          - not_null
+          - unique
+
+      - name: custid
+        description: "ID of the customer who placed the order"
+        tests:
+          - not_null
+
+      - name: empid
+        description: "ID of the employee who accepted the order"
+        tests:
+          - not_null
+
+      - name: orderdate
+        description: "Date when the order was placed"
+        tests:
+          - not_null
+
+      - name: requireddate
+        description: "Date when the order is needed to arrived"
+        tests:
+          - not_null
+      
+      - name: shippeddate
+        description: "Date when the order is shipped"
+
+      - name: shipperid
+        description: "Unique ID of the shipper assigned to the sales order"
+      
+      - name: freight
+        description: "Freight amount charged for shipping"

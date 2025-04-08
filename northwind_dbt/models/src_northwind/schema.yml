@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: northwind
+    tables:
+      - name: category
+      - name: customer
+      - name: customercustomerdemographic
+      - name: customerdemographic
+      - name: employee
+      - name: employeeterritory
+      - name: orderdetail
+      - name: product
+      - name: region
+      - name: salesorder
+      - name: shipper
+      - name: supplier
+      - name: territory
